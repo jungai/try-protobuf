@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package userpackage;
+
+message UserResp {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  bool isValid = 4;
+}

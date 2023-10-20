@@ -2,7 +2,7 @@
 	import axios from 'axios';
 	import { onMount } from 'svelte';
 	import { Buffer } from 'buffer';
-	import { userpackage } from '../../../../services/service1/models/protobufs/js/esm';
+	import { userpackage } from 'protobufs';
 
 	onMount(async () => {
 		const { data } = await axios.get('http://localhost:3000/users');

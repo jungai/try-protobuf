@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { userpackage } from "./models/protobufs/js/esm/index.js";
+
+// use from workspace instead of local protobufs in model
+import { userpackage } from "protobufs";
 
 function setupCors(e) {
   return e.use(cors());

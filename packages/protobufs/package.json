@@ -1,0 +1,28 @@
+{
+  "name": "protobufs",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    "require": "./index.cjs",
+    "import": "./index.js",
+    "default": "./index.js"
+  },
+  "scripts": {
+    "proto:gencjs": "pbjs -t static-module -w commonjs -o index.cjs ./*.proto",
+    "proto:genmjs": "pbjs -t  static-module -w ./_template.js --es6 --dependency protobufjs/minimal.js -o ./index.js ./*.proto",
+    "proto:gentype": "pbts -o ./index.d.ts ./index.js",
+    "proto:genjs": "pnpm run proto:gencjs && pnpm run proto:genmjs && pnpm run proto:gentype"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "protobufjs-cli": "^1.1.2"
+  },
+  "dependencies": {
+    "protobufjs": "^7.2.5"
+  }
+}
