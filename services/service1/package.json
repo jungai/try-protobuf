@@ -1,0 +1,24 @@
+{
+  "name": "service1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file .env .",
+    "proto:gencjs": "pbjs -t static-module -w commonjs -o ./models/protobufs/js/cjs/index.js ./models/protobufs/*.proto",
+    "proto:genmjs": "pbjs -t  static-module -w ./models/protobufs/_template.mjs --es6 --dependency protobufjs/minimal.js -o ./models/protobufs/js/esm/index.js ./models/protobufs/*.proto",
+    "proto:genjs": "pnpm proto:gencjs && pnpm proto:genmjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "protobufjs": "^7.2.5"
+  },
+  "devDependencies": {
+    "protobufjs-cli": "^1.1.2"
+  }
+}
